@@ -1,7 +1,9 @@
 import java.lang.*;
+import java.lang.annotation.Inherited;
 
 class Base
 {
+    
     public void fun()
     {
         System.out.println("Base fun");
@@ -18,6 +20,7 @@ class Base
 
 class Derived extends Base
 {
+    @Deprecated    
     public void fun()
     {
         System.out.println("Derived fun");
@@ -39,9 +42,9 @@ class Virtual
     public static void main(String arg[])
     {
 //        Base bobj = new Base();
- //       Derived dobj = new Derived()
+          Derived obj1 = new Derived();
 
-        Base obj1 = new Derived();  //upcasting
+ //       Base obj1 = new Derived();  //upcasting
         //Derived obj2 = new Base();   Downcasting not allowed
 
         obj1.fun();
